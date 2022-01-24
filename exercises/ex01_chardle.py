@@ -39,7 +39,6 @@ if letter_guess == fifth_letter:
     counter = counter + 1
 
 counter_str = str(counter)
-#print(counter_str + " instances of " + letter_guess + " found in " + word_guess)
 
 if counter == 0:
     print("No instances of " + letter_guess + " found in " + word_guess)
