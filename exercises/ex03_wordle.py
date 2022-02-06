@@ -41,7 +41,7 @@ def contains_char(secret: str, char_guess: str) -> bool:
 
 
 def emojified(guess: str, secret: str) -> str:
-    "Codifying the secret with an emoji string given the guess."
+    """Codifying the secret with an emoji string given the guess."""
     # gives visual representation of inidices check
     assert len(secret) == len(guess)
     i: int = 0
@@ -58,7 +58,7 @@ def emojified(guess: str, secret: str) -> str:
 
 
 def input_guess(expect_len: int) -> str:
-    "Prompting user to provide guess of expected length."
+    """Prompting user to provide guess of expected length."""
     # prompts user for a word and keeps track of the length of the word
     guess: str = input(f"Enter a {expect_len} character word: ")
     guess_length = len(guess)
