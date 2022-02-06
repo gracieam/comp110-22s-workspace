@@ -1,14 +1,15 @@
 """Structured Wordle."""
 
-___author___ = "730402215"
+__author__ = "730402215"
 
 white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
-# main will keep track of guesses and call all of the functions used
+
 def main() -> None:
-    """The entrypoint of the program and main game loop"""
+    """The entrypoint of the program and main game loop."""
+    # main will keep track of guesses and call all of the functions used
     secret: str = "codes"
     turn_N: int = 1
     guess: str = ""
@@ -20,14 +21,15 @@ def main() -> None:
         if guess == secret:
             is_won = True
         turn_N += 1
-    if is_won == True:
+    if is_won is True:
         print(f"You won in {turn_N}/6 turns! ")
-    elif is_won == False:
+    elif is_won is False:
         print("X/6 - Sorry, try again tomorrow!")
 
-# will help emojified run properly by checking indices
+
 def contains_char(secret: str, char_guess: str) -> bool:
-    """Searches in secret_word for char_guess"""
+    """Searches in secret_word for char_guess."""
+    # will help emojified run properly by checking indices
     assert len(char_guess) == 1
     i: int = 0
     while i < len(secret):
@@ -37,9 +39,10 @@ def contains_char(secret: str, char_guess: str) -> bool:
             return True
     return False 
 
-# gives visual representation of inidices check
+
 def emojified(guess: str, secret: str) -> str:
-    "Codifying the secret with an emoji string given the guess"
+    "Codifying the secret with an emoji string given the guess."
+    # gives visual representation of inidices check
     assert len(secret) == len(guess)
     i: int = 0
     emoji: str = ""
@@ -53,15 +56,17 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return emoji
 
-# prompts user for a word and keeps track of the length of the word
+
 def input_guess(expect_len: int) -> str:
-    "Prompting user to provide guess of expected length"
+    "Prompting user to provide guess of expected length."
+    # prompts user for a word and keeps track of the length of the word
     guess: str = input(f"Enter a {expect_len} character word: ")
     guess_length = len(guess)
     while guess_length != expect_len:
         guess = input(f"That wasn't {expect_len} chars! Try again: ")
         guess_length = len(guess)
     return guess
+
 
 if __name__ == "__main__":
     main()
