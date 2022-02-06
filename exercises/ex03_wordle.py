@@ -6,6 +6,7 @@ white_box: str = "\U00002B1C"
 green_box: str = "\U0001F7E9"
 yellow_box: str = "\U0001F7E8"
 
+# main will keep track of guesses and call all of the functions used
 def main() -> None:
     """The entrypoint of the program and main game loop"""
     secret: str = "codes"
@@ -24,9 +25,7 @@ def main() -> None:
     elif is_won == False:
         print("X/6 - Sorry, try again tomorrow!")
 
-
-
-
+# will help emojified run properly by checking indices
 def contains_char(secret: str, char_guess: str) -> bool:
     """Searches in secret_word for char_guess"""
     assert len(char_guess) == 1
@@ -38,6 +37,7 @@ def contains_char(secret: str, char_guess: str) -> bool:
             return True
     return False 
 
+# gives visual representation of inidices check
 def emojified(guess: str, secret: str) -> str:
     "Codifying the secret with an emoji string given the guess"
     assert len(secret) == len(guess)
@@ -53,6 +53,7 @@ def emojified(guess: str, secret: str) -> str:
         i += 1
     return emoji
 
+# prompts user for a word and keeps track of the length of the word
 def input_guess(expect_len: int) -> str:
     "Prompting user to provide guess of expected length"
     guess: str = input(f"Enter a {expect_len} character word: ")

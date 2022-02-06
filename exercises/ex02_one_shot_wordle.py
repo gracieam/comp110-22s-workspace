@@ -1,6 +1,6 @@
-"""EX02 - One Shot Wordle"""
+"""EX02 - One Shot Wordle."""
 
-__author__ = 730402215
+__author__ = "730402215"
 
 secret_word: str = "python"
 secret_word_length = len(secret_word)
@@ -26,11 +26,10 @@ while i < secret_word_length:
         while secret_alt_i < secret_word_length:
             if secret_word[secret_alt_i] == word_guess[i]:
                 char_location = True  
-                secret_counter =+ 1
-                if char_location == True:
+                if char_location:
                     emoji = emoji + yellow_box
             secret_alt_i += 1
-        if char_location == False:
+        if not char_location:
             emoji = emoji + white_box
     secret_alt_i = 0
     char_location = False
