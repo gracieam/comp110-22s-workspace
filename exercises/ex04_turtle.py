@@ -2,25 +2,18 @@
 
 __author__ = "730402215"
 
-from turtle import Turtle, colormode, done, circle, screensize, tracer
+from turtle import Turtle, colormode, done, circle, screensize
 
 def main() -> None:
-    tracer(0, 0)
-    sky: Turtle = Turtle()
-    grass: Turtle = Turtle()
-    star: Turtle = Turtle()
-    moon: Turtle = Turtle()
     from random import randint
-    draw_sky(sky, 0, 0)
-    draw_grass(grass, 0, 0, 300, 300)
-    draw_moon(moon, 0, 100)
-    draw_stars(star, randint(-300,300), randint(-300, 300))
+    width: int = 300
+    height: int = 300
+    x: float = randint(-300, 300)
+    y: float = randint(-300, 300)
 
-
-def draw_sky(the_sky: Turtle, x: float, y: float) -> None:
-    sky: Turtle = Turtle()
+def draw_sky(sky: Turtle, x: float, y: float) -> None:
     sky.goto(x, y)
-    screensize(0, 0, "blue")
+    screensize(300, 300, "blue")
 
 
 def draw_grass(landscape: Turtle, x: float, y: float, width: float, height: float) -> None:
