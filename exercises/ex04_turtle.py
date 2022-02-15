@@ -2,19 +2,20 @@
 
 __author__ = "730402215"
 
-from turtle import Turtle, colormode, done, circle, screensize, tracer
+from turtle import Turtle, colormode, done, screensize, tracer
 
 tracer(0, 0)
 drawing: Turtle = Turtle()
+
 
 def main() -> None:
     """The act of drawing a starry night."""
     from random import randint
     draw_sky(drawing, 0, 0)
-    draw_grass(drawing, -400, -100 , 800, 750)
+    draw_grass(drawing, -400, -100, 800, 750)
     draw_moon(drawing, 0, 100)
     number_of_stars(drawing)
-    draw_stars(drawing, randint(100,300), randint(100, 300))
+    draw_stars(drawing, randint(100, 300), randint(100, 300))
     
     done()
 
@@ -40,10 +41,11 @@ def draw_grass(landscape: Turtle, x: float, y: float, width: float, height: floa
     while i < 2:
         grass.forward(width)
         grass.right(90)
-        grass.forward(height/3)
+        grass.forward(height / 3)
         grass.right(90)
         i += 1
     grass.end_fill()
+
 
 def draw_stars(star: Turtle, x: float, y: float) -> None:
     """Draw yellow stars on a blue background."""
@@ -72,7 +74,7 @@ def number_of_stars(star: Turtle) -> None:
     star_N: int = randint(10, 20)
     i: int = 0
     while i < star_N:
-        draw_stars(drawing, randint(-350,350), randint(100, 300))
+        draw_stars(drawing, randint(-350, 350), randint(100, 300))
         i += 1
 
 
