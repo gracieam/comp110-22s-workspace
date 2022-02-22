@@ -38,10 +38,10 @@ def test_sub_repeats() -> None:
     assert sub(given_list, 1, 4) == [10, 10, 15]
 
 
-def test_sub_long_start() -> None:
+def test_sub_end_long() -> None:
     """When given a start that is greater than the length of the list, an empty list is returned."""
     given_list: list[int] = [10, 20, 30]
-    assert sub(given_list, 3, 4) == []
+    assert sub(given_list, 2, 4) == []
 
 
 def test_concat_in_order() -> None:
