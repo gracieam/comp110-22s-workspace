@@ -1,9 +1,9 @@
-"""Using 'list' Utility Functions"""
+"""Using 'list' Utility Functions."""
 
 __author__ = "730402215"
 
 def only_evens(given_list: list[int]) -> list:
-    """When given a list of even numbers the even numbers are returned"""
+    """When given a list of even numbers, the even numbers are returned."""
     even_list: list[int] = list()
     i: int = 0
     while i < len(given_list):
@@ -13,7 +13,7 @@ def only_evens(given_list: list[int]) -> list:
     return even_list
 
 def sub(given_list: list[int], start: int, end: int) -> list:
-    """When given a list and two indexes a subset of the original list should be returned"""
+    """When given a list and two indexes, a subset list should be returned with values between the start and end index (not inclusive)."""
     subset_list: list[int] = list()
     if start < 0:
         start = 0
@@ -30,5 +30,6 @@ def sub(given_list: list[int], start: int, end: int) -> list:
 
 
 def concat(list_one: list[int], list_two: list[int]) -> list:
+    """When given two lists, a list should be returned containing all of the elements in the first list and the second list in order"""
     new_list = list_one + list_two
     return new_list
