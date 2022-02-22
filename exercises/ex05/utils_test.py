@@ -54,8 +54,8 @@ def test_concat_in_order() -> None:
 def test_concat_no_mutation() -> None:
     """When given two lists, the second list is concatenated on the end of the first list without mutating either list."""
     list_one: list[int] = [1, 3, 5]
-    list_two: list[int] = [2, 4, 6]
-    assert concat(list_one, list_two) == [1, 3, 5, 2, 4, 6]
+    list_two: list[int] = [2, 4]
+    assert concat(list_one, list_two) == [1, 3, 5, 2, 4]
 
 
 def test_concat_empty_returns_empty() -> None:
