@@ -1,4 +1,4 @@
-"""Dictionary Functions"""
+"""Dictionary Functions."""
 
 __author__ = "730402215"
 
@@ -33,7 +33,7 @@ def favorite_color(my_dictionary: dict[str, str]) -> str:
         
 
 def count(my_list: list[str]) -> dict[str, int]: 
-    """When given a list, a dictionary should be returned that comtains the list value as key and the instances of that list value as a value."""
+    """When given a list, a dictionary should be returned that contains the list value as key and the instances of that list value as a value."""
     dictionary: dict[str, int] = dict()
     i: int = 0
     for item in my_list:
