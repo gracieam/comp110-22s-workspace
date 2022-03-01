@@ -7,6 +7,7 @@ from dictionary import favorite_color
 from dictionary import count
 import pytest
 
+
 def test_invert_same_length_word() -> None:
     """When given keys and values of the same length, the function should invert the keys and values."""
     my_dictionary: dict[str, str] = {"ate": "eat", "sat": "sit"}
@@ -59,4 +60,3 @@ def test_count_empty_list() -> None:
     """When given no list items, an empty dictionary should be returned."""
     my_list: list[str] = []
     assert count(my_list) == {}
-

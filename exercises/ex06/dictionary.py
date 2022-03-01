@@ -17,7 +17,6 @@ def invert(my_dictionary: dict[str, str]) -> dict[str, str]:
 
 def favorite_color(my_dictionary: dict[str, str]) -> str:
     """When given a dictionary containing names of colors, the name of the most frequent color is returned."""
-    i: int = 0
     empty_dictionary: dict[str, int] = dict()
     max: int = 0
     result: str = ""
@@ -35,7 +34,6 @@ def favorite_color(my_dictionary: dict[str, str]) -> str:
 def count(my_list: list[str]) -> dict[str, int]: 
     """When given a list, a dictionary should be returned that contains the list value as key and the instances of that list value as a value."""
     dictionary: dict[str, int] = dict()
-    i: int = 0
     for item in my_list:
         if item in dictionary:
             dictionary[item] += 1
