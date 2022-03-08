@@ -10,7 +10,7 @@ yellow_box: str = "\U0001F7E8"
 def main() -> None:
     """The entrypoint of the program and main game loop."""
     # main will keep track of guesses and call all of the functions used
-    secret: str = "codes"
+    secret: str = "farts"
     turn_N: int = 1
     guess: str = ""
     is_won: bool = False
