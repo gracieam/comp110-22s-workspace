@@ -35,10 +35,13 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
 
 
 def head(col_table: dict[str, list[str]], row_N: int) -> dict[str, list[str]]:
+    """Produced a new column table with N rows of data per column."""
     result: dict[str, list[str]] = {}
     for column_name in col_table:
         N_value: list[str] = []
         i: int = 0
+        if row_N >= len(col_table):
+            return col_table
         while i < row_N:
             N_value.append(col_table[column_name][i])
             i += 1
@@ -52,18 +55,28 @@ def select(col_table: dict[str, list[str]], columns: list[str]) -> dict[str, lis
     for column_name in columns:
         column_value: list[str] = col_table[column_name]
         new_col_table[column_name] = column_value
-        # new_col_table[columns] = column_value
     return new_col_table
 
 
-def concat(col_t1: dict[str, list[str]], col_t2:dict[str, list[str]]) -> dict[str, list[str]]:
+def concat(col_t1: dict[str, list[str]], col_t2: dict[str, list[str]]) -> dict[str, list[str]]:
     """Combines two column-based tables and returns the combined result."""
     combined: dict[str, list[str]] = {}
     for column in col_t1:
         combined[column] = col_t1[column]
     for column in col_t2:
-        if col_t2[column] == combined[column]:
+        if column in combined and col_t2[column] != col_t1[column]:
             combined[column] += col_t2[column]
         else:
             combined[column] = col_t2[column]
     return combined
+
+
+def count(input_list: list[str]) -> dict[str, int]:
+    """Returns a value where keys are the items in a list and values are the frequency of those items."""
+    result: dict[str, int] = {}
+    for item in input_list:
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
+    return result
