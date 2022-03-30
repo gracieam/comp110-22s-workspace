@@ -82,38 +82,37 @@ def count(input_list: list[str]) -> dict[str, int]:
     return result
 
 
-def filter(col_table: dict[str, list[str]], column_n1: str, column_n2: str) -> dict[str, list[str]]:
-    filtered: dict[str, list[str]] = {}
-    response_list: list[str] = []
-    difficulty_list: list[str] =[]
-    column_value: list[str] = col_table[column_n1]
-    i: int = 0
-    while i < len(column_value):
-        if column_value[i] == "None to less than one month!" or column_value[i] == "Over 2 years":
-            response_list.append(column_value[i])
-            difficulty_list.append(col_table[column_n2][i])
-        i += 1
-    filtered[column_n1] = response_list
-    filtered[column_n2] = difficulty_list     
-    return filtered
+def super_filter(data: dict[str, list[str]], title_1: str, title_2: str) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    column_values: list[str] = []
+    list_title_2: list[str] = []
+    contains: bool = False
+    j = 0 
+    final = 0
+    please_god_final: dict[str, list[str]] = {}
 
-# def combined(col_table: dict[str, list[str]], col_1: str, col_2: str) -> dict[str, str]:
-#     combined: dict[str, str] = {}
-    
-    
-#     return combined
+    for value in data[title_1]:
+        contains = False
+        i: int = 0
 
-# def separate(col_table: dict[str, list[str]], col_n: str) -> list[str]:
-#     separated: list[str] = []
-#     for col_n in col_table:
-#         for value in col_n:
-#             separated.append(value)
-#     # i: int = 0
-#     # column_value: list[str] = col_table[col_n]
-#     # while i < len(column_value):
-#     #     separated.append(column_value[i])
-#     #     i += 1         
-#     return separated
-    
-    
+        while i < len(column_values):
+            if column_values[i] == value:
+                contains = True
+            i += 1    
+                
+        if contains == False:
+            column_values.append(value)
+            please_god_final[value] = [] 
 
+
+        if j < len(column_values):
+            j += 1 
+        
+
+        please_god_final[value].append(data[title_2][final])
+        final += 1 
+
+    for element in column_values: 
+        result[element] = please_god_final[element]
+        
+    return result
