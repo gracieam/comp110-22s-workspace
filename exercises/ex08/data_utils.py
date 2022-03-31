@@ -88,8 +88,8 @@ def super_filter(data: dict[str, list[str]], title_1: str, title_2: str) -> dict
     list_title_2: list[str] = []
     contains: bool = False
     j = 0 
-    final = 0
-    please_god_final: dict[str, list[str]] = {}
+    dict_counter = 0
+    helper_dict: dict[str, list[str]] = {}
 
     for value in data[title_1]:
         contains = False
@@ -102,17 +102,17 @@ def super_filter(data: dict[str, list[str]], title_1: str, title_2: str) -> dict
                 
         if contains == False:
             column_values.append(value)
-            please_god_final[value] = [] 
+            helper_dict[value] = [] 
 
 
         if j < len(column_values):
             j += 1 
         
 
-        please_god_final[value].append(data[title_2][final])
-        final += 1 
+        helper_dict[value].append(data[title_2][dict_counter])
+        dict_counter += 1 
 
     for element in column_values: 
-        result[element] = please_god_final[element]
+        result[element] = helper_dict[element]
         
     return result
